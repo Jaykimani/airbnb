@@ -1,0 +1,126 @@
+@media screen and (max-width: 600px) {
+    .calendar-container {
+        background: #fff;
+        width: 95%;
+        padding-bottom: 10px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .calendar-container header {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 25px 20px 10px;
+    }
+    
+    header .calendar-navigation {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    header .calendar-navigation span {
+        height: 38px;
+        width: 38px;
+        margin: 0 1px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 50%;
+        user-select: none;
+        color: #040404;
+        display: grid;
+        place-items: center;
+    }
+    
+    .calendar-navigation span:last-child {
+        margin-right: -10px;
+    }
+    
+    
+    header .calendar-current-date {
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+    
+    .calendar-body {
+        padding: 20px 5px;
+    }
+    
+    .calendar-body ul {
+        list-style: none;
+        flex-wrap: wrap;
+        display: flex;
+        text-align: center;
+    }
+    
+    .calendar-body .calendar-dates {
+        margin-bottom: 20px;
+    }
+    
+    .calendar-body li {
+        width: calc(100% / 7);
+        font-size: 1.00rem;
+        color: #414141;
+    }
+    
+    .calendar-body .calendar-weekdays li {
+        cursor: default;
+        font-weight: 400;
+    }
+    
+    .calendar-body .calendar-dates li {
+        margin-top: 25px;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        padding: 5px 0;
+        border-radius: 30px;
+    }
+    
+    .calendar-dates li.inactive {
+        color: #aaa;
+        opacity: 0;
+    }
+    
+    .calendar-dates li.active {
+        color: #fff;
+        border: none;
+    }
+    
+    .calendar-dates li::before {
+        position: absolute;
+        content: "";
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .calendar-dates li.active::before {
+        background: #6332c5;
+    }
+    
+    /* .calendar-dates li:not(.active):hover::before {
+        background: #e4e1e1;
+    } */
+    .calendar-submit{
+        width: 90%;
+        height: 40px;
+        background-color: black;
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        border: none;
+        outline: none;
+        margin: 0px auto;
+        display: block;
+        font-size: 18px;
+
+    }
+    
+}

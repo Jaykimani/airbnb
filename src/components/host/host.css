@@ -1,0 +1,95 @@
+@media screen and (max-width: 600px) {
+    .host-main{
+       width: 100%;
+       height: auto;
+       background-color: white;
+       box-shadow: inset 0 7px 15px -7px rgba(0,0,0,1);
+       padding: 30px 10px;
+    }
+    .host-title{
+        font-family: 'Playfair Display', sans-serif;
+        text-align: center;
+        text-decoration: underline;
+        font-size: 23px;
+    }
+    .host-div{
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: #fffad7;
+        margin: 80px auto 0;
+        border-radius: 20px;
+        border: 1px solid black;
+        padding-bottom: 20px;
+    }
+    .host-image{
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background-color: black;
+        margin: 0 auto;
+        transform: translateY(-50%);
+        border: 2px solid black;
+    }
+    .host-image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .host-name{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 500;
+        text-align: center;
+        transform: translateY(-30px);
+    }
+    .host-content{
+        width: 95%;
+        height: auto;
+        background-color: white;
+        margin: 0 auto;
+        border-radius: 10px;
+        padding: 20px 20px;
+        text-align: center;
+    }
+    .host-word{
+        width: 100%;
+        font-family: 'Abel', sans-serif;
+        text-align: center;
+    }
+    .host-rules{
+        text-align: center;
+        font-family: 'Playfair Display', sans-serif;
+        text-decoration: underline;
+        margin-top: 30px;
+        font-size: 19px;
+    }
+    .check-rule{
+        text-align: left;
+        font-family: 'Abel', sans-serif;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .check-heading{
+        text-decoration: underline;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    .check-time{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    .notice{
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+    }
+    .vacuum{
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+    }
+
+}

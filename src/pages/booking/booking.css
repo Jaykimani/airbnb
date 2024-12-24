@@ -1,0 +1,362 @@
+@media screen and (max-width: 600px) {
+    #bookings{
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        padding: 10px 7px;
+    }
+    .booking-div{
+        width: 100%;
+        height: auto;
+        background-color: #fffad7;
+        border-radius: 20px;
+        border: 2px solid rgb(0, 0, 0);
+        padding: 10px 5px;
+    }
+    .booking-title{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        text-decoration: underline;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .booking-sign{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        text-decoration: underline;
+        text-align: center;
+    }
+    .guest{
+        position: relative;
+        width: 80%;
+        height: auto;
+        margin: 20px auto 20px;
+        display: flex;
+        background-color: white;
+        align-items: center;
+        padding: 7px 20px;
+        font-family: 'Abel', sans-serif;
+        border-radius: 30px;
+        justify-content: space-between;
+        border: 1px solid black;
+    }
+    .old-signin{
+        width: 90%;
+        height: auto;
+        background: white;
+        z-index: 6;
+        box-shadow: 0px 7px 15px -3px rgba(0,0,0,1);
+        display: none;
+        margin: 0 auto;
+        padding: 20px 10px 10px;
+    }
+    .old-signin div{
+        width: 100%;
+        height: 100%;
+        display: grid;
+    }
+    .old-input{
+        width: 90%;
+        height: 30px;
+        place-self: center;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+        padding-left: 10px;
+        font-size: 15px;
+    }
+    .old-input::placeholder{
+        font-family: 'Abel', sans-serif;
+    }
+    .old-submit{
+        width: 80%;
+        height: 40px;
+        background-color: black;
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        margin: 15px auto 0;
+        
+    }
+    .new-signin{
+        width: 93%;
+        height: auto;
+        margin: 0 auto 20px;
+        background: white;
+        z-index: 6;
+        box-shadow: 0px 7px 15px -3px rgba(0,0,0,1);
+        padding: 10px 7px;
+        border-radius: 7px;
+    }
+    .names{
+        display: flex;
+        justify-content: space-between;
+    }
+    .name{
+        width: 48%;
+        height: 30px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+        padding-left: 5px;
+        margin: 10px 0;
+    }
+
+    .name::placeholder{
+        font-family: 'Abel', sans-serif;
+    }
+    .other-inputs{
+        width: 100%;
+        margin: 10px 0;
+        height: 30px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+        padding-left: 5px;
+        
+    }
+    .other-inputs::placeholder{
+        font-family: 'Abel', sans-serif;
+    }
+    .new-submit{
+        width: 80%;
+        height: 40px;
+        background-color: black;
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        display: block;
+        margin: 10px auto 0;
+    }
+    .check-div{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        margin: 15px auto;
+    }
+    .check-box{
+        width: 40%;
+        height: auto;
+        padding: 0 5px 10px;
+        background-color: white;
+        border: 1px solid black;
+        text-align: center;
+        border-radius: 10px;
+    }
+    .check-active{
+        border: 4px solid black;
+    }
+    .check-header{
+        font-family: 'Playfair Display', sans-serif;
+        margin: 10px 0;
+        text-decoration: underline;
+    }
+    .check-in{
+        font-family: 'Abel', sans-serif;
+        color: rgb(69, 69, 69);
+    }
+    .check-out{
+        font-family: 'Abel', sans-serif;
+        color: rgb(69, 69, 69);
+    }
+    .guests-div{
+        width: 92%;
+        height: auto;
+        background-color: white;
+        margin: 20px auto;
+        border-radius: 15px;
+        padding: 15px 10px;
+        box-shadow: 0px 7px 15px -7px rgba(0,0,0,1);
+
+    }
+    .guest-div{
+        width: 90%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        font-family: 'Abel', sans-serif;
+        border-bottom: 1px solid black;
+        margin: 10px auto 0;
+    }
+    .guest-categ{
+        width: 40%;
+
+    }
+    .guest-categ p:nth-child(1){
+        font-size: 19px;
+    }
+    .guest-categ p:nth-child(2){
+        font-size: 13px;
+    }
+    .guest-count{
+        width: 45%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .guest-count span{
+        width: 25px;
+        height: 25px;
+        display: grid;
+        place-items: center;
+    }
+    .guest-count span:nth-child(1){
+        font-family: 'Playfair Display', sans-serif;
+
+    }
+    .guest-count span:nth-child(2){
+        font-size: 20px;        
+    }
+
+    .guest-count span:nth-child(3){
+        font-family: 'Playfair Display', sans-serif;
+        
+    }
+    .wishlist-div{
+        width: 92%;
+        height: auto;
+        box-shadow: 0px 7px 15px -7px rgba(0,0,0,1);
+        background-color: white;
+        border-radius: 15px;
+        margin: 0 auto;
+        padding: 15px 10px;
+    }
+    .wishlist-desc{
+        font-family: 'Abel', sans-serif;
+        color: #989898;
+        width: 80%;
+        text-align: center;
+        margin: 10px auto;
+        
+    }
+    .wish-input{
+        width: 80%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px auto;
+    }
+    .wish-input input{
+        width: 100%;
+        height: 35px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+        padding-left: 10px;
+    }
+    .wish-input input::placeholder{
+        font-family: 'Abel', sans-serif;
+        color: #989898;
+    }
+    .wish-input span{
+        margin-top: 20px;
+        width: 45px;
+        height: 45px;
+        display: grid;
+        place-items: center;
+        background-color: black;
+        border-radius: 50%;
+        color: white;
+        font-size: 30px;
+    }
+    .wishlist-item{
+        width: 70%;
+        padding: 12px;
+        margin: 0 auto;
+        font-family: 'Abel', sans-serif;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .item-delete{
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        border-radius: 50%;
+        color: white;
+        font-size: 18px;
+        display: grid;
+        place-items: center;
+        font-family: 'Playfair Display', sans-serif;
+    }
+    .reserve-div{
+        width: 75%;
+        height: 50px;
+        background-color: black;
+        color: white;
+        margin: 20px auto 10px;
+        display: grid;
+        place-items: center;
+        font-size: 20px;
+        font-family: 'Playfair Display', sans-serif;
+        border-radius: 50px;
+    }
+    .confirmation-div{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.8);
+        z-index: 10;
+        place-items: center;
+    }
+    .confirmation{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85%;
+        height: 300px;
+        background-color: #fffad7;
+        border-radius: 20px;
+        box-shadow: 0px 7px 15px -7px rgb(0, 0, 0);
+        padding: 15px;
+        z-index: 12;
+    }
+    .payment-desc{
+        font-family: 'Abel', sans-serif;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 15px;
+        padding: 0 10px;
+    }
+    .mpesa{
+        text-align: center;
+        margin: 15px 0;
+        font-family: 'Abel', sans-serif;
+        text-decoration: underline;
+    }
+    .pay-input{
+        display: block;
+        width: 80%;
+        height: 40px;
+        margin: 0 auto;
+        outline: none;
+        border: 2px solid black;
+        padding-left: 10px;
+    }
+    .prompt{
+        display: block;
+        width: 50%;
+        height: 40px;
+        margin: 15px auto 0;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 18px;
+    }
+}
