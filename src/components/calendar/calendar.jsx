@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect, useState} from "react";
 import './calendar.css';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -8,6 +8,9 @@ import { useContext } from "react";
 
 function Calendar() {
     const {state, dispatch} = useContext(CountContext);
+    let [checkdate, setCheckdate] = useState({checkIn: '', checkOut: ''});
+    let [selectDates, setSelectDates] = useState({selectCheckin: '', selectCheckout: ''});
+    let [count, setCount] = useState(0);
 
 useEffect(()=>{
     let date = new Date();
@@ -17,11 +20,13 @@ let month = date.getMonth();
 
 
 
-
 const day = document.querySelector(".calendar-dates");
 
 const currdate = document
     .querySelector(".calendar-current-date");
+
+const curryear = document
+    .querySelector(".calendar-current-year");    
 
 const prenexIcons = document
     .querySelectorAll(".calendar-navigation span");
@@ -87,28 +92,13 @@ const prenexIcons = document
     
         // Update the text of the current date element 
         // with the formatted current month and year
-        currdate.innerText = `${months[month]} ${year}`;
+        currdate.innerText = `${months[month]}`;
+        curryear.innerText = `${year}`;
         
         // update the HTML of the dates element 
         // with the generated calendar
         day.innerHTML = lit;
-        let allList = document.querySelectorAll(".item");
-        allList.forEach((item)=>{
-            item.addEventListener('click', (e)=>{
-                let theDay = e.currentTarget.innerHTML;
-                let selectedDay = theDay + '/' + (month + 1) + '/' + year;
-                
-                if (state.checkinBox) {
-                    dispatch({type: "add-checkin", payload: selectedDay});
-                    
-                 } else if(state.checkoutBox) {
-                  dispatch({type: "add-checkout", payload: selectedDay});
-                    
-              }
-                
-                
-            });
-        })
+        
 
     }
     
@@ -151,31 +141,142 @@ const prenexIcons = document
 
         
     });
-}, [dispatch, state.checkinBox, state.checkoutBox]); 
+}, []); 
+
+useEffect(()=>{
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+
+    let allList = document.querySelectorAll(".item");
+    allList.forEach((item)=>{
+        
+        let month = document.querySelector(".calendar-current-date").innerHTML;
+        let year = document.querySelector(".calendar-current-year").innerHTML;
+        let monthNum = '';
+        for (let i = 0; i < months.length; i++) {
+          if(months[i] === month){
+            monthNum = i + 1;
+          }
+               
+        }
+
+        let previousDates = monthNum + '/' + item.innerHTML + '/' + year;
+        let nowDate = new Date();
+        
+        
+        if (new Date(previousDates).setHours(0,0,0,0) < nowDate.setHours(0,0,0,0) ){
+
+        item.style.color = "#aaaaaa";
+
+        item.addEventListener("click", ()=>{
+            return null;
+        });
+            
+        } else {
+
+            item.addEventListener('click', (e)=>{
+                item.style.backgroundColor = '#ddd598';
+            
+                let selectedDay = e.currentTarget.innerHTML + '/' + monthNum + '/' + year;
+                let selectCheck = monthNum + '/' + e.currentTarget.innerHTML + '/' + year;
+
+                if (state.checkinBox) {
+                    setCheckdate({...checkdate, checkIn: selectedDay});
+                    setSelectDates({...selectDates, selectCheckin: selectCheck});
+                    dispatch({type: "checkout-clicked"})
+
+                }else if(state.checkoutBox){
+                    setCheckdate({...checkdate, checkOut: selectedDay});
+                    setSelectDates({...selectDates, selectCheckout : selectCheck});
+
+                }
+                
+            })
+        }  
+        
+        
+        });
+
+        if (selectDates.selectCheckin !== '' && selectDates.selectCheckout !== '') {
+          let allDates = document.querySelectorAll(".item");
+          allDates.forEach((item)=>{
+            let month = document.querySelector(".calendar-current-date").innerHTML;
+            let year = document.querySelector(".calendar-current-year").innerHTML;
+            let monthNum = '';
+            for (let i = 0; i < months.length; i++) {
+              if(months[i] === month){
+              monthNum = i + 1;
+            }
+               
+        }
+
+        let checkedDates = monthNum + '/' + item.innerHTML + '/' + year;
+
+        if (new Date(checkedDates).setHours(0,0,0,0) >= new Date(selectDates.selectCheckin).setHours(0,0,0,0) &&  new Date(checkedDates).setHours(0,0,0,0) <= new Date(selectDates.selectCheckout).setHours(0,0,0,0)) {
+            
+            item.style.backgroundColor = '#ddd598';
+        }else{
+            item.style.backgroundColor = 'white';
 
 
- const handeCalendarClose = ()=>{
-      dispatch({type: 'close-calendar'});
+        }
+
+          })
+         
+    
+        }
+        
+
+
+}, [count, dispatch, state.checkinBox, state.checkoutBox, checkdate]);
+
+useEffect(()=>{
+
+    dispatch({type: "add-checkin", payload: checkdate.checkIn});
+    dispatch({type: "add-checkout", payload: checkdate.checkOut});
+   
+
+}, [dispatch, checkdate.checkIn, checkdate.checkOut])
+
+
+
+ const handleNext = ()=>{
+    setCount(count+=1);
  }
- 
+ const handlePrevious = ()=>{
+    setCount(count-=1);
+ }
 
 
     return (<>
-    <div class="calendar-container" style={{display: `${state.openCalendar ? `block` : `none`}`}}>
-        <header class="calendar-header">
-            <div class="calendar-navigation">
-                <span id="calendar-prev" class="material-symbols-rounded">
+    <div id="calendar-container" >
+        <header className="calendar-header">
+            <div className="calendar-navigation">
+                <span id="calendar-prev" className="material-symbols-rounded" onClick={handlePrevious}>
                 <ArrowBackIosIcon /> 
                 </span>
-                <p class="calendar-current-date"></p>
-                <span id="calendar-next" class="material-symbols-rounded">
+                <p className="calendar-current-date"></p>
+                <p className="calendar-current-year"></p>
+                <span id="calendar-next" className="material-symbols-rounded" onClick={handleNext}>
                 <ArrowForwardIosIcon />    
                 </span>
             </div>
         </header>
 
-        <div class="calendar-body">
-            <ul class="calendar-weekdays">
+        <div className="calendar-body">
+            <ul className="calendar-weekdays">
                 <li>Sun</li>
                 <li>Mon</li>
                 <li>Tue</li>
@@ -184,11 +285,11 @@ const prenexIcons = document
                 <li>Fri</li>
                 <li>Sat</li>
             </ul>
-            <ul class="calendar-dates"></ul>
+            <ul className="calendar-dates"></ul>
         </div>
 
-        <button type="submit" className="calendar-submit" onClick={handeCalendarClose}>Done</button>
     </div>
+
     </>)
 }
 

@@ -2,18 +2,15 @@ import React, { useReducer } from "react";
 import {Reducer} from "./contextreducer";
 
 const defaultState = {
-    oldGuest: {},
-    newGuest: {},
+    guestData: {},
     checkIn: "",
     checkOut: "",
-    checkinBox: false,
+    checkinBox: true,
     checkoutBox: false,
-    openCalendar: false,
-    guests: {
-        adults: '',
-        children: '',
-        infants: ''
-    },
+    guests: {},
+    foodSelected: {},
+    basket: [],
+    foodOrders: {},
     wishlist: []
 };
 

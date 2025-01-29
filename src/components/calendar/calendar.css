@@ -1,11 +1,10 @@
-@media screen and (max-width: 600px) {
-    .calendar-container {
+
+    #calendar-container {
         background: #fff;
         width: 95%;
-        padding-bottom: 10px;
-        margin: 0 auto;
+        margin: 30px auto 10px;
         border-radius: 10px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        display: block;
     }
     
     .calendar-container header {
@@ -42,7 +41,11 @@
     
     header .calendar-current-date {
         font-weight: 500;
-        font-size: 1.2rem;
+        font-size: 20px;
+    }
+    .calendar-current-year{
+        font-weight: 500;
+        font-size: 20px;
     }
     
     .calendar-body {
@@ -62,7 +65,7 @@
     
     .calendar-body li {
         width: calc(100% / 7);
-        font-size: 1.00rem;
+        font-size: 16px;
         color: #414141;
     }
     
@@ -78,6 +81,7 @@
         cursor: pointer;
         padding: 5px 0;
         border-radius: 30px;
+    
     }
     
     .calendar-dates li.inactive {
@@ -86,8 +90,8 @@
     }
     
     .calendar-dates li.active {
-        color: #fff;
-        border: none;
+        color: #000;
+        border: 1px solid black;
     }
     
     .calendar-dates li::before {
@@ -102,25 +106,16 @@
         transform: translate(-50%, -50%);
     }
     
-    .calendar-dates li.active::before {
-        background: #6332c5;
-    }
     
     /* .calendar-dates li:not(.active):hover::before {
         background: #e4e1e1;
     } */
-    .calendar-submit{
-        width: 90%;
-        height: 40px;
-        background-color: black;
-        color: white;
-        font-family: 'Playfair Display', sans-serif;
-        border: none;
-        outline: none;
-        margin: 0px auto;
-        display: block;
-        font-size: 18px;
-
+    .checkinactive{
+        background-color: green;
+    }
+    .checkoutactive{
+        background-color: red;
     }
     
-}
+
+

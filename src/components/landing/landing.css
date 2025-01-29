@@ -1,10 +1,13 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     #landing-page{
         width: 100%;
         height: 100vh;
         position: relative;
         overflow: hidden;
         
+    }
+    #landing-page1{
+        display: none;
     }
     .landing-img{
         width: 100%;
@@ -21,8 +24,8 @@
         width: 100%;
         height: 100%;
         z-index: 3;
-        background-color: rgba(0, 0, 0, 0.8);
-        animation: landing-color 4s ease-out;
+        background-color: rgba(0, 0, 0, 0.1);
+        animation: landing-color 4s ease-outa;
     }
 
     @keyframes landing-zoom {
@@ -34,30 +37,32 @@
         }
     }
 
-    @keyframes landing-color {
+    /* @keyframes landing-color {
         0%{
             background-color: rgba(0, 0, 0, 0);
         }
         20%{
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0);
         }
         100%{
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.);
 
         }
-    }
+    } */
     .landing-content{
         position: absolute;
         top: 9%;
         left: 0;
         width: 100%;
         z-index: 4;
-        padding: 0 30px;
+        padding: 0 20px;
         line-height: 60px;
         font-family: "Italiana", sans-serif;
         font-size: 40px;
         text-align: center;
+        text-shadow: 2px 2px 4px black;
         color: #FFF0A6;
+        /* background-color: black; */
         animation: info-zoom 7s alternate;
     }
   
@@ -110,6 +115,7 @@
     }
     .downarrow{
         animation: arrow-zoom 1.5s 6s infinite ease;
+        color: #FFF0A6;
     }
     @keyframes arrow-zoom {
         0%{
@@ -141,5 +147,131 @@
         0%{ opacity: 0;}
         90%{ opacity: 0;}
         100%{ opacity: 1 }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #landing-page{
+      display: none;
+    }
+    #landing-page1{
+        display: block;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(0, 0, 0);
+        display: flex;
+    }
+    .images-div{
+        width: 60%;
+        height: 100%;
+        background-color: #FFF0A6;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+       
+    }
+    .img-div{
+        width: 33.33%;
+        height: 50%;
+        overflow: hidden;
+    }
+    
+    .img-div img{
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+
+    }
+
+    .logo-div{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        background-color: black;
+        border-radius: 50%;
+        box-shadow: 0px 0px 100px 40px rgb(0, 0, 0);
+        
+    }
+  
+    .logo-div img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 50%;
+    }
+    .landing-content1{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        animation: info-zoom1 4s alternate;
+    }
+    @keyframes info-zoom1 {
+        0%{ opacity: 0;
+            transform: translateY(-50px);}
+        /* 40%{
+            opacity: 0;
+            transform: translateY(-50px);
+        } */
+        100%{ opacity: 1 ;
+            transform: translateY(0);
+        }
+    }
+    .landing-info1{
+        width: 70%;
+        line-height: 60px;
+        font-family: "Italiana", sans-serif;
+        font-size: 53px;
+        text-align: center;
+        text-shadow: 2px 2px 4px black;
+        color: #ddd598;
+        margin: 20px auto 0;
+    }
+    .explore1{
+        width: 60%;
+        height: 70px;
+        margin: 0 auto;
+        background-color: #ddd598;
+        border-radius: 40px;
+        padding: 0 10px;
+        display: flex;
+        color: black;
+        align-items: center;
+        justify-content: space-around;
+        animation: button-zoom 7s alternate;
+    }
+    .explore1 p{
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+    }
+    .downarrow1{
+        animation: arrow-zoom1 1.5s 6s infinite ease;
+    }
+    @keyframes arrow-zoom1 {
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(5px);
+        }
+        100%{
+            transform: translateY(0px);
+        }
+    }
+    .sign-in1{
+        z-index: 5;
+        width: 60%;
+        text-align: center;
+        height: auto;
+        font-size: 17px;
+        font-family: "Playfair Display", serif;
+        color: white;
+        text-decoration: underline;
+        animation: sign-zoom 7s ease;
+        margin: 0 auto;
     }
 }

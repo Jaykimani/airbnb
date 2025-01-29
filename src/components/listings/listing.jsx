@@ -137,8 +137,8 @@ function Listing({}, ref){
                 <p>Scenic views</p>
               </div>
               <div className="offer-item">
-                <DirectionsCarIcon fontSize="large" />
-                <p>Ample parking</p>
+              <img src="images/cctv.png" style={{width: '35px', height: '35px'}} alt="" srcset="" />
+              <p>24/7 Security</p>
               </div>
             </div>
         </div>
@@ -149,6 +149,110 @@ function Listing({}, ref){
         </Link>
         
      </div>
+    </div>
+
+    <div ref={ref} id="listing-div1">
+    <p className="listing-title1">Our Listings</p>
+    <div className="listing1">
+    <p className="listing-name1">One Bedroom apartment at Laiser Place by Tsavo, Rongai.</p>
+    <h5 className="listing-price1">PRICE: 3000/= per Night</h5>
+    <div className="listing1-info">
+      <div className="listing1-info1">
+      <div className="description1">
+            <h4>Description</h4>
+            <p>Laiser place is an amazing apartment, overlooking Ngong Hills in the serene suburbs of Rongai town.
+            Comes with a swimming pool, a pool deck, and a children's play area.</p>
+        </div>
+        <div className="offers">
+            <h4>What our place offers</h4>
+            <div className="offers-div">
+              <div className="offer-item">
+                <WifiIcon fontSize="large"/>
+                <p>Wifi</p>
+              </div>
+              <div className="offer-item">
+                <ChairIcon fontSize="large" />
+                <p>Furnished Livingroom</p>
+              </div>
+              <div className="offer-item">
+                <KingBedIcon fontSize="large" />
+                <p>Furnished Bedroom</p>
+              </div>
+              <div className="offer-item">
+                <CountertopsIcon fontSize="large" />
+                <p>Furnished Kitchen</p>
+              </div>
+              <div className="offer-item">
+                <TvIcon fontSize="large" />
+                <p>Television</p>
+              </div>
+              <div className="offer-item">
+                <DryCleaningIcon fontSize="large" />
+                <p>Bed linen & towels</p>
+              </div>
+              <div className="offer-item">
+                <WaterDropIcon fontSize="large" />
+                <p>Clean water</p>
+              </div>
+              <div className="offer-item">
+                <ShowerIcon fontSize="large" />
+                <p>Hot shower</p>
+              </div>
+              <div className="offer-item">
+                <DirectionsCarIcon fontSize="large" />
+                <p>Ample parking</p>
+              </div>
+              <div className="offer-item">
+                <PoolIcon fontSize="large" />
+                <p>Outdoor pool</p>
+              </div>
+              <div className="offer-item">
+                <PanoramaIcon fontSize="large" />
+                <p>Scenic views</p>
+              </div>
+              <div className="offer-item">
+              <img src="images/cctv.png" style={{width: '35px', height: '35px'}} alt="" srcset="" />
+              <p>24/7 Security</p>
+              </div>
+            </div>
+        </div>
+        <Link to={'/booking'} style={{textDecoration: "none"}}>
+        <div className="booking-btn">
+              <p>BOOK NOW</p>
+            </div>
+        </Link>
+
+      </div>
+      <div className="listing1-info2">
+      <div className="listing-image1">
+            <img className="img1" src={`images/listing1img${image}.jpg`} alt="" srcset="" />
+            <ArrowBackIosIcon  className="arrowback" style={{display: `${image > 1 ? `block` : `none` }`}} onClick={handlePreviousImage}/>
+            <ArrowForwardIosIcon className="arrowforward" style={{display: `${image < 13 ? `block` : `none` }`}} onClick={handleNextImage}/>
+        </div>
+        <div className="otherimages">
+            <img id="1" className="active img-select" src="images/listing1img1.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="2" className="img-select" src="images/listing1img2.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="3" className="img-select" src="images/listing1img3.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="4" className="img-select" src="images/listing1img4.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="5" className="img-select" src="images/listing1img5.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="6" className="img-select" src="images/listing1img6.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="7" className="img-select" src="images/listing1img7.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="8" className="img-select" src="images/listing1img8.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="9" className="img-select" src="images/listing1img9.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="10" className="img-select" src="images/listing1img10.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="11" className="img-select" src="images/listing1img11.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="12" className="img-select" src="images/listing1img12.jpg" alt="" srcset="" onClick={handleImageClick}/>
+            <img id="13" className="img-select" src="images/listing1img13.jpg" alt="" srcset="" onClick={handleImageClick}/>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    </div>
+
+
     </div>
 
     

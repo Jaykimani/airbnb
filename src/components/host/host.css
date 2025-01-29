@@ -1,10 +1,14 @@
-@media screen and (max-width: 600px) {
-    .host-main{
+@media screen and (max-width: 800px) {
+    #host-main{
+       display: block;
        width: 100%;
        height: auto;
        background-color: white;
        box-shadow: inset 0 7px 15px -7px rgba(0,0,0,1);
        padding: 30px 10px;
+    }
+    #host-main1{
+        display: none;
     }
     .host-title{
         font-family: 'Playfair Display', sans-serif;
@@ -16,7 +20,7 @@
         position: relative;
         width: 100%;
         height: auto;
-        background-color: #fffad7;
+        background-color: #ddd598;
         margin: 80px auto 0;
         border-radius: 20px;
         border: 1px solid black;
@@ -46,7 +50,7 @@
     .host-content{
         width: 95%;
         height: auto;
-        background-color: white;
+        /* background-color: white; */
         margin: 0 auto;
         border-radius: 10px;
         padding: 20px 20px;
@@ -92,4 +96,103 @@
         object-fit: contain;
     }
 
+}
+
+@media screen and (min-width: 800px) {
+    #host-main{
+        display: none;
+    }
+    #host-main1{
+        display: block;
+        width: 100%;
+        height: auto;
+        background-color: white;
+        box-shadow: inset 0 7px 15px -7px rgba(0,0,0,1);
+        padding: 30px 10px;
+    }
+    .host-title{
+        font-family: 'Playfair Display', sans-serif;
+        text-align: center;
+        text-decoration: underline;
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .host-div{
+        position: relative;
+        width: 90%;
+        height: auto;
+        background-color: #ddd598;
+        margin: 100px auto 0;
+        border-radius: 20px;
+        padding-bottom: 20px;
+    }
+    .host-image{
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background-color: black;
+        margin: 0 auto;
+        transform: translateY(-50%);
+        border: 2px solid black;
+    }
+    .host-image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .host-name{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 500;
+        text-align: center;
+        transform: translateY(-30px);
+        font-size: 25px;
+    }
+    .host-word{
+        width: 60%;
+        font-family: 'Abel', sans-serif;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .house-rules{
+        width: 80%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px auto 20px;
+        justify-content: space-between;
+    }
+    .house-rules1{
+        width: 48%;
+    }
+    .check-rule{
+        text-align: left;
+        font-family: 'Abel', sans-serif;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .check-rule p{
+        font-size: 18px;
+    }
+    .check-heading{
+        text-decoration: underline;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    .check-time{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    .notice{
+        width: 100%;
+        text-align: center;
+        font-size: 17px;
+    }
+    .vacuum{
+        width: 33px;
+        height: 33px;
+        object-fit: contain;
+    }
 }

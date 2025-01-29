@@ -1,10 +1,14 @@
 @media screen and (max-width: 600px) {
-    .footer-div{
+    #footer-div{
         width: 100%;
         height: 300px;
         background-color: black;
         padding: 20px;
         text-align: center;
+        display: block;
+    }
+    #footer-div1{
+        display: none;
     }
     .footer-div h4{
         font-family: 'Playfair Display', sans-serif;
@@ -19,10 +23,65 @@
         margin: 20px auto;
         justify-content: space-around;
         align-items: center;
+        
     }
     .contact p{
         color: white;
         font-family: 'Abel', sans-serif;
         font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #footer-div{
+        display: none;
+    }
+    #footer-div1{
+        width: 100%;
+        height: 400px;
+        background-color: black;
+        padding: 20px;
+        display: flex;
+    }
+    .footer-info1{
+        width: 48%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+    .footer-info{
+        width: 48%;
+        height: 100%;  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .logo-img{
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .footer-info h4{
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        text-decoration: underline;
+        font-size: 21px;
+        margin: 10px 0 30px;
+        text-align: left;
+    }
+    .contact1{
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin: 20px auto;
+        align-items: center;
+        
+    }
+    .contact1 p{
+        color: white;
+        font-family: 'Abel', sans-serif;
+        font-size: 18px;
+        margin-left: 30px;
     }
 }

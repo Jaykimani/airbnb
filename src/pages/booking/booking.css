@@ -1,22 +1,38 @@
-@media screen and (max-width: 600px) {
+
     #bookings{
         width: 100%;
         height: 100vh;
-        background-color: #ffffff;
-        padding: 10px 7px;
+        background-color: #ddd598;
+        display: flex;
+
     }
     .booking-div{
-        width: 100%;
-        height: auto;
-        background-color: #fffad7;
-        border-radius: 20px;
-        border: 2px solid rgb(0, 0, 0);
-        padding: 10px 5px;
+        width: 40%;
+        height: 100%;
+        overflow-y: scroll;
+        padding: 30px 40px;
     }
+    .images-div1{
+        width: 60%;
+        height: 100%;
+        background-color: #FFF0A6;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .dark{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #00000098;
+    }
+   
     .booking-title{
         font-family: 'Playfair Display', sans-serif;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 25px;
         text-decoration: underline;
         text-align: center;
         margin-bottom: 20px;
@@ -24,71 +40,99 @@
     .booking-sign{
         font-family: 'Playfair Display', sans-serif;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 22px;
         text-decoration: underline;
         text-align: center;
     }
+    .caution{
+        text-align: center;
+        color: red;
+        margin-top: 10px;
+        font-size: 18px;
+    }
     .guest{
         position: relative;
-        width: 80%;
+        width: 100%;
         height: auto;
         margin: 20px auto 20px;
         display: flex;
         background-color: white;
         align-items: center;
-        padding: 7px 20px;
+        padding: 20px 20px;
         font-family: 'Abel', sans-serif;
         border-radius: 30px;
         justify-content: space-between;
-        border: 1px solid black;
+        font-size: 18px;
+        /* border: 1px solid black; */
+        box-shadow: 0px 3px 10px -4px rgba(0,0,0,1);
+
     }
     .old-signin{
-        width: 90%;
+        width: 100%;
         height: auto;
         background: white;
         z-index: 6;
-        box-shadow: 0px 7px 15px -3px rgba(0,0,0,1);
-        display: none;
         margin: 0 auto;
         padding: 20px 10px 10px;
+        
     }
-    .old-signin div{
-        width: 100%;
-        height: 100%;
-        display: grid;
-    }
+  
     .old-input{
-        width: 90%;
+        width: 100%;
         height: 30px;
-        place-self: center;
         border: none;
         outline: none;
         border-bottom: 2px solid black;
         padding-left: 10px;
         font-size: 15px;
+        
     }
     .old-input::placeholder{
         font-family: 'Abel', sans-serif;
     }
     .old-submit{
-        width: 80%;
-        height: 40px;
+        width: 70%;
+        height: 45px;
         background-color: black;
         color: white;
         font-family: 'Playfair Display', sans-serif;
-        border: none;
-        outline: none;
         border-radius: 10px;
         margin: 15px auto 0;
-        
+        display: grid;
+        place-items: center; 
+        border: none;
+        outline: none;
+    }
+   
+    .old-submit span{
+        width: 27px;
+        height: 27px;
+        animation: round 0.5s linear infinite;
+        border: 3px solid white;
+        border-radius: 70%;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+    }
+    @keyframes round {
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg); 
+        }
+    }
+    .user-response{
+        text-align: center;
+        font-size: 17px;
+        font-family: 'Playfair Display', sans-serif;
     }
     .new-signin{
-        width: 93%;
+        width: 100%;
         height: auto;
         margin: 0 auto 20px;
         background: white;
         z-index: 6;
-        box-shadow: 0px 7px 15px -3px rgba(0,0,0,1);
         padding: 10px 7px;
         border-radius: 7px;
     }
@@ -115,7 +159,7 @@
         height: 30px;
         border: none;
         outline: none;
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid rgb(0, 0, 0);
         padding-left: 5px;
         
     }
@@ -134,12 +178,436 @@
         display: block;
         margin: 10px auto 0;
     }
+    .checkinout{
+        width: 100%;
+        height: auto;
+        background-color: white;
+        padding: 15px 0;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px -4px rgba(0,0,0,1);
+        margin-top: 30px;
+    }
     .check-div{
         width: 100%;
         height: auto;
         display: flex;
         justify-content: space-around;
-        margin: 15px auto;
+        margin: 15px auto 5px;
+    }
+    .check-box{
+        width: 40%;
+        height: auto;
+        padding: 0 5px 10px;
+        background-color: white;
+        border: 1px solid black;
+        text-align: center;
+        border-radius: 10px;
+        margin-top: 25px;
+    }
+    .check-active{
+        border: 4px solid #ddd598;
+    }
+    .check-header{
+        font-family: 'Playfair Display', sans-serif;
+        margin: 10px 0;
+        text-decoration: underline;
+    }
+    .check-in{
+        font-family: 'Abel', sans-serif;
+        color: rgb(69, 69, 69);
+        font-size: 18px;
+    }
+    .check-out{
+        font-family: 'Abel', sans-serif;
+        color: rgb(69, 69, 69);
+        font-size: 18px;
+
+    }
+    .guests-div{
+        width: 99%;
+        height: auto;
+        background-color: white;
+        margin: 30px auto;
+        border-radius: 15px;
+        padding: 15px 10px 20px;
+        box-shadow: 0px 0px 15px -4px rgba(0,0,0,1);
+
+    }
+    .guest-div{
+        width: 90%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        font-family: 'Abel', sans-serif;
+        border-bottom: 1px solid black;
+        margin: 10px auto 0;
+    }
+    .guest-div:nth-child(4){
+        border-bottom: none;
+    }
+    .guest-categ{
+        width: 40%;
+
+    }
+    .guest-categ p:nth-child(1){
+        font-size: 19px;
+    }
+    .guest-categ p:nth-child(2){
+        font-size: 13px;
+    }
+    .guest-count{
+        width: 45%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .guest-count span{
+        width: 25px;
+        height: 25px;
+        display: grid;
+        place-items: center;
+    }
+    .guest-count span:nth-child(1){
+        font-family: 'Playfair Display', sans-serif;
+
+    }
+    .guest-count span:nth-child(2){
+        font-size: 20px;        
+    }
+
+    .guest-count span:nth-child(3){
+        font-family: 'Playfair Display', sans-serif;
+        
+    }
+    .wishlist-div{
+        width: 99%;
+        height: auto;
+        box-shadow: 0px 0px 15px -4px rgba(0,0,0,1);
+        background-color: white;
+        border-radius: 15px;
+        margin: 0 auto;
+        padding: 15px 10px;
+    }
+    .wishlist-desc{
+        font-family: 'Abel', sans-serif;
+        color: #989898;
+        width: 80%;
+        text-align: center;
+        margin: 10px auto 30px;
+        
+    }
+    .wish-input{
+        width: 80%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+    }
+    .wish-input input{
+        width: 100%;
+        height: 35px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+        padding-left: 10px;
+    }
+    .wish-input input::placeholder{
+        font-family: 'Abel', sans-serif;
+        color: #989898;
+    }
+    .wish-input button{
+        margin-top: 20px;
+        width: 45px;
+        height: 45px;
+        display: grid;
+        place-items: center;
+        background-color: black;
+        border-radius: 50%;
+        color: white;
+        font-size: 30px;
+        outline: none;
+        border: none;
+    }
+    .wishlist-item{
+        width: 70%;
+        padding: 12px;
+        margin: 0 auto;
+        font-family: 'Abel', sans-serif;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .item-delete{
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        border-radius: 50%;
+        color: white;
+        font-size: 18px;
+        display: grid;
+        place-items: center;
+        font-family: 'Playfair Display', sans-serif;
+    }
+    .reserve-div{
+        width: 80%;
+        height: 60px;
+        background-color: black;
+        color: white;
+        margin: 30px auto 10px;
+        display: grid;
+        place-items: center;
+        font-size: 22px;
+        font-family: 'Playfair Display', sans-serif;
+        border-radius: 50px;
+    }
+    .confirmation-div{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.8);
+        z-index: 10;
+        place-items: center;
+    }
+    .confirmation{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 350px;
+        background-color: #fffad7;
+        border-radius: 20px;
+        box-shadow: 0px 7px 15px -7px rgb(0, 0, 0);
+        padding: 15px;
+        z-index: 12;
+    }
+    .payment-desc{
+        font-family: 'Abel', sans-serif;
+        font-size: 17px;
+        text-align: center;
+        margin-top: 15px;
+        padding: 0 10px;
+    }
+    .mpesa{
+        text-align: center;
+        margin: 15px 0;
+        font-family: 'Abel', sans-serif;
+        text-decoration: underline;
+        font-size: 18px;
+    }
+    .pay-input{
+        display: block;
+        width: 80%;
+        height: 50px;
+        margin: 20px auto;
+        outline: none;
+        border: 2px solid black;
+        padding-left: 10px;
+        font-size: 17px;
+    }
+    .prompt{
+        display: block;
+        width: 50%;
+        height: 60px;
+        margin: 15px auto 0;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 18px;
+    }
+    .mpesa-word{
+        color: #0cc202;
+    }
+    .dash{
+        color: #ff0000;
+    }
+
+
+@media screen and (max-width: 800px) {
+    #bookings{
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        display: block;
+    }
+    .images-div1{
+        display: none;
+    }
+    .booking-div{
+        width: 100%;
+        height: auto;
+        background-color: #fffad7;
+        border-radius: 20px;
+        padding: 10px 15px;
+        overflow-y: visible;
+    }
+    .booking-title{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        text-decoration: underline;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .booking-sign{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        text-decoration: underline;
+        text-align: center;
+    }
+    .caution{
+        text-align: center;
+        color: red;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    .guest{
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin: 20px auto 20px;
+        display: flex;
+        background-color: white;
+        align-items: center;
+        padding: 20px 20px;
+        font-family: 'Abel', sans-serif;
+        border-radius: 30px;
+        justify-content: space-between;
+        font-size: 18px;
+        /* border: 1px solid black; */
+        box-shadow: 0px 3px 10px -4px rgba(0,0,0,0.5);
+
+    }
+    .old-signin{
+        width: 100%;
+        height: auto;
+        background: white;
+        z-index: 6;
+        margin: 0 auto;
+        padding: 20px 10px 10px;
+        
+    }
+  
+    .old-input{
+        width: 100%;
+        height: 30px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+        padding-left: 10px;
+        font-size: 15px;
+        
+    }
+    .old-input::placeholder{
+        font-family: 'Abel', sans-serif;
+    }
+    .old-submit{
+        width: 70%;
+        height: 45px;
+        background-color: black;
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        border-radius: 10px;
+        margin: 15px auto 0;
+        display: grid;
+        place-items: center; 
+        border: none;
+        outline: none;
+    }
+   
+    .old-submit span{
+        width: 27px;
+        height: 27px;
+        animation: round 1s linear infinite;
+        border: 3px solid white;
+        border-radius: 70%;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+    }
+    @keyframes round {
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg); 
+        }
+    }
+    .new-signin{
+        width: 100%;
+        height: auto;
+        margin: 0 auto 20px;
+        background: white;
+        z-index: 6;
+        padding: 10px 7px;
+        border-radius: 7px;
+    }
+    .names{
+        display: flex;
+        justify-content: space-between;
+    }
+    .name{
+        width: 48%;
+        height: 30px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+        padding-left: 5px;
+        margin: 10px 0;
+    }
+
+    .name::placeholder{
+        font-family: 'Abel', sans-serif;
+    }
+    .other-inputs{
+        width: 100%;
+        margin: 10px 0;
+        height: 30px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid rgb(0, 0, 0);
+        padding-left: 5px;
+        
+    }
+    .other-inputs::placeholder{
+        font-family: 'Abel', sans-serif;
+    }
+    .new-submit{
+        width: 80%;
+        height: 40px;
+        background-color: black;
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        display: block;
+        margin: 10px auto 0;
+    }
+    .checkinout{
+        width: 100%;
+        height: auto;
+        background-color: white;
+        padding: 15px 0;
+        border-radius: 15px;
+        box-shadow: 0px 7px 15px -7px rgba(0,0,0,1);
+
+    }
+    .check-div{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        margin: 15px auto 5px;
     }
     .check-box{
         width: 40%;
@@ -151,7 +619,7 @@
         border-radius: 10px;
     }
     .check-active{
-        border: 4px solid black;
+        border: 4px solid #ddd598;
     }
     .check-header{
         font-family: 'Playfair Display', sans-serif;
@@ -161,13 +629,16 @@
     .check-in{
         font-family: 'Abel', sans-serif;
         color: rgb(69, 69, 69);
+        font-size: 18px;
     }
     .check-out{
         font-family: 'Abel', sans-serif;
         color: rgb(69, 69, 69);
+        font-size: 18px;
+
     }
     .guests-div{
-        width: 92%;
+        width: 99%;
         height: auto;
         background-color: white;
         margin: 20px auto;
@@ -221,7 +692,7 @@
         
     }
     .wishlist-div{
-        width: 92%;
+        width: 99%;
         height: auto;
         box-shadow: 0px 7px 15px -7px rgba(0,0,0,1);
         background-color: white;
@@ -234,7 +705,7 @@
         color: #989898;
         width: 80%;
         text-align: center;
-        margin: 10px auto;
+        margin: 10px auto 30px;
         
     }
     .wish-input{
@@ -340,11 +811,14 @@
     .pay-input{
         display: block;
         width: 80%;
-        height: 40px;
+        height: 45px;
         margin: 0 auto;
         outline: none;
         border: 2px solid black;
         padding-left: 10px;
+    }
+    .pay-input::placeholder{
+        font-size: 15px;
     }
     .prompt{
         display: block;
@@ -359,4 +833,11 @@
         font-family: 'Playfair Display', sans-serif;
         font-size: 18px;
     }
+    .mpesa-word{
+        color: #0cc202;
+    }
+    .dash{
+        color: #ff0000;
+    }
 }
+
