@@ -151,7 +151,7 @@ function Listing({}, ref){
      </div>
     </div>
 
-    <div ref={ref} id="listing-div1">
+    <div id="listing-div1">
     <p className="listing-title1">Our Listings</p>
     <div className="listing1">
     <p className="listing-name1">One Bedroom apartment at Laiser Place by Tsavo, Rongai.</p>

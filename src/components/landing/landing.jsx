@@ -7,14 +7,12 @@ import Footer from "../footer/footer";
 
 function Landing(){
   const listingDiv = useRef(null);
- 
 
   const handleExplore = ()=>{
     
     listingDiv.current?.scrollIntoView({behavior : "smooth"});
     
   }
-
 
 
 
@@ -59,7 +57,7 @@ function Landing(){
       <div className="landing-content1">
       <p className="landing-info1"><span>Experience</span> <span>Comfort,</span> <span>Style</span> <span>and</span> <span>the</span> <span>Warmth</span> <span>of a</span> <span>home</span> <span>away</span> <span>from</span> <span>home.</span></p>
       <div className="explore-div1">
-     <div className="explore1" onClick={handleExplore}>
+     <div className="explore1">
         <p>EXPLORE</p>
         <KeyboardDoubleArrowDownIcon fontSize="large" className="downarrow1"/>
      </div>

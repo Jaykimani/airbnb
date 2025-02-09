@@ -14,7 +14,7 @@
         height: 100%;
         scale: 1;
         object-fit: cover;
-        animation: landing-zoom 7s ease-out;
+        animation: landing-zoom 5s ease-out;
     }
     #landing-page::after{
         content: '';
@@ -25,7 +25,7 @@
         height: 100%;
         z-index: 3;
         background-color: rgba(0, 0, 0, 0.1);
-        animation: landing-color 4s ease-outa;
+        animation: landing-color 3s ease-out;
     }
 
     @keyframes landing-zoom {
@@ -63,7 +63,7 @@
         text-shadow: 2px 2px 4px black;
         color: #FFF0A6;
         /* background-color: black; */
-        animation: info-zoom 7s alternate;
+        animation: info-zoom 3s alternate;
     }
   
     @keyframes info-zoom {
@@ -96,7 +96,7 @@
         color: white;
         align-items: center;
         justify-content: space-around;
-        animation: button-zoom 7s alternate;
+        animation: button-zoom 3s alternate;
     }
     @keyframes button-zoom {
         0%{ opacity: 0;

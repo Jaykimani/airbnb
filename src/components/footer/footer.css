@@ -10,7 +10,7 @@
     #footer-div1{
         display: none;
     }
-    .footer-div h4{
+    #footer-div h4{
         font-family: 'Playfair Display', sans-serif;
         color: white;
         text-decoration: underline;

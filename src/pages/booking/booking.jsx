@@ -6,7 +6,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import Calendar from "../../components/calendar/calendar";
 import { CountContext } from "../../context/context";
 import { useContext } from "react";
-import {axiosInstance} from "../../config"
+import {axiosInstance} from "../../config";
+import { useNavigate } from "react-router-dom";
+
 
 
 function Booking(){
@@ -30,7 +32,8 @@ function Booking(){
     let idPassport = useRef();
     let phoneNumber = useRef();
     let email = useRef();
-    let telNumber = useRef();
+    let check = useRef();
+    const navigate = useNavigate();
 
 
     useEffect(()=>{
@@ -46,7 +49,6 @@ function Booking(){
     const handleOldGuest = ()=>{
         setOldGuest(!oldGuest);
         setNewGuest(false);
-        document.getElementById("focus").focus();
     }
 
     const handleOldSubmit = async(e)=>{
@@ -129,40 +131,43 @@ function Booking(){
 
       setWishList([...newWishlist])
     }
+    
+    const handleCheckbox = ()=>{
+           if (check.current.checked) {
+            let bookingDiv = document.querySelector(".booking-div");
 
-    const handleReserve = ()=>{
-      let bookingDiv = document.querySelector(".booking-div");
-
-      if (fName.current.value === '' || lName.current.value === '' || idPassport.current.value === '' || phoneNumber.current.value === '' || email.current.value === '') {
-          setSignin(true);
-          window.scrollTo(0,0);
-          bookingDiv.scrollTo(0,0);
-      } else {
-        setSignin(false);
-        setConfirm(true);
-        const userInfo = {
-          firstName: fName.current.value,
-          lastName: lName.current.value,
-          idPassport: idPassport.current.value,
-          phoneNo: phoneNumber.current.value,
-          emailAddress: email.current.value
-       }
-       const guests = {
-         adults: adult,
-         childs: children,
-         infant: infants
-       }
-       console.log(userInfo);
-       
-       dispatch({type: "add-guestdata", payload: userInfo});
-       dispatch({type: "add-guests", payload: guests});
-       dispatch({type: "add-wishlist", payload: wishList})
-        
-      }
-      
+            if (fName.current.value === '' || lName.current.value === '' || idPassport.current.value === '' || phoneNumber.current.value === '' || email.current.value === '') {
+                setSignin(true);
+                window.scrollTo(0,0);
+                bookingDiv.scrollTo(0,0);
+            } else {
+              setSignin(false);
+              const userInfo = {
+                firstName: fName.current.value,
+                lastName: lName.current.value,
+                idPassport: idPassport.current.value,
+                phoneNo: phoneNumber.current.value,
+                emailAddress: email.current.value
+             }
+             const guests = {
+               adults: adult,
+               childs: children,
+               infant: infants
+             }
+            
+             
+             dispatch({type: "add-guestdata", payload: userInfo});
+             dispatch({type: "add-guests", payload: guests});
+             dispatch({type: "add-wishlist", payload: wishList})
+              
+            }
+              
+           }
     }
-    const handlePrompt = async()=>{
-       let userDetails = {
+
+
+    const handleReserve = async()=>{
+      let userDetails = {
         id: state.guestData.idPassport,
         firstName: state.guestData.firstName,
         lastName: state.guestData.lastName,
@@ -175,24 +180,31 @@ function Booking(){
        }
 
 
-       await axiosInstance.post('/content', userDetails);
-       
+      //  await axiosInstance.post('/content', userDetails);
 
-      //   const phoneNumber = telNumber.current.value;
-      //  const money = 1;
-   
-      //      const response = await axiosInstance.post('/pay', {phoneNumber, money});
-   
-          //  const result = await response.json();
-          //  console.log(result);
+
+       setConfirm(true);
+
+       setTimeout(() => {
+        setConfirm(false);
+        navigate('/');
+       }, 4000);
       
     }
-    const handleRemoveConfirm = ()=>{
-      setConfirm(false);
-    }
-    const handleInputFocus = ()=>{
-      setConfirm(true);
-    }
+    // const handlePrompt = async()=>{
+      
+       
+
+    //   //   const phoneNumber = telNumber.current.value;
+    //   //  const money = 1;
+   
+    //   //      const response = await axiosInstance.post('/pay', {phoneNumber, money});
+   
+    //       //  const result = await response.json();
+    //       //  console.log(result);
+      
+    // }
+   
 
     return (<>
       <div id="bookings">
@@ -231,7 +243,7 @@ function Booking(){
               {oldGuest ? <KeyboardArrowUpIcon fontSize="large"/> : <KeyboardArrowDownIcon fontSize="large" />} 
               </div>
               <div className="old-signin" style={{display: `${oldGuest ? `block` : `none`}`}}>
-                {resp ? <div className="user-response" >
+                {resp ? <div className="user-response" style={{background: "transparent"}}>
                   {dataFound ? <p>Hello {fName.current.value}, We are glad to have you back!</p>
                   :
                   <p>Sorry, We do not have your information. Try again or sign in as a new guest!</p>
@@ -319,7 +331,7 @@ function Booking(){
               </div>
               <div className="wishlist-div">
               <p className="booking-sign">Wishlist</p>
-              <p className="wishlist-desc">Items or Accessories you would like to find present.(OPTIONAL). You can also use this space to create a shopping list.</p>
+              <p className="wishlist-desc">Items or Accessories you would like to find present. You can also use this space to create a shopping list.(OPTIONAL).</p>
               {wishList?.length > 0 && (wishList?.map((item)=>{
                 return(
                   <div id={item?.[0]} className="wishlist-item">
@@ -333,21 +345,27 @@ function Booking(){
                 <button type="submit">+</button>
               </form>
               </div>
+              <div className="payment-div">
+              <p className="booking-sign">Payment</p>
+              <p className="payment-desc">To secure your reservation and ensure everything is ready for your stay, we kindly request a payment of at least 50% of the total cost at the time of booking.</p>
+              <div className="confirm">
+              <input className="checkbox" type="checkbox" name="yoooo" id="" onClick={handleCheckbox} ref={check}/>
+              <p>I Accept the terms and conditions.</p>
+              </div>
+              </div>
              <div className="reserve-div" onClick={handleReserve}>
               <h4>RESERVE</h4>
              </div>
          </div>
+         
 
-         <div className="confirmation-div" style={{display: `${confirm ? `block` : `none`}`}} onClick={handleRemoveConfirm}>
-         </div>
-          <div className="confirmation" style={{display: `${confirm ? `block` : `none`}`}}>
-          <p className="booking-sign">Payment</p>
-           <p className="payment-desc">To secure your reservation and ensure everything is ready for your stay, we kindly request a payment of atleast 50% of the total cost at the time of booking.</p>
-           <p className="mpesa">PAY USING <span className="mpesa-word">M<span className="dash">-</span>PESA</span></p>
-           <input className="pay-input" type="text" name="" id="" placeholder="Enter M-pesa phone number" onFocus={handleInputFocus} ref={telNumber}/>
-           <button type="submit" className="prompt" onClick={handlePrompt}>PROMPT</button>
+         <div className="confirmation" style={{display: `${confirm ? `grid` : `none`}`}}>
+          <div className="confirm-content">
+          <p>Your reservation is confirmed!</p>
+          <p>Thank you for choosing to stay with us, We're excited to host you. If you have any special requests or need anything for your stay, feel free to reach out. Looking forward to welcoming you!</p>
           </div>
-        
+          
+         </div>
 
       </div>
 

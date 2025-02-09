@@ -7,7 +7,7 @@
         width: 100%;
         height: auto;
         padding: 30px 10px;
-        background-color: #ddd598;
+        background-color: #fffbe0;
         box-shadow: inset 0 7px 15px -7px rgba(0,0,0,1);
     }
     .listing-title{
@@ -21,7 +21,7 @@
     .listing{
         width: 100%;
         height: auto;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 1);
         backdrop-filter: blur(8px);
         padding: 10px 0;
         border-radius: 10px;
@@ -166,7 +166,7 @@
         width: 100%;
         height: auto;
         padding: 30px 10px;
-        background-color: #e3deb6;
+        background-color: #f3eec6;
         box-shadow: inset 0 7px 15px -7px rgba(0,0,0,1);    }
     .listing-title1{
         font-family: 'Playfair Display', sans-serif;
